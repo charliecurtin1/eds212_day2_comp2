@@ -32,3 +32,28 @@ dfdz = D(fxyz, 'z')
 
 dfdz
 ```
+
+penguins plot, body mass (x), flipper length (y)
+
+```{r}
+# aes is reserved for mapping variables, not constants. in this example, color is determined by species. could also do color = "purple" outside of aes() and all points would be 
+ggplot(data = penguins, aes(x = body_mass_g, 
+                            y = flipper_length_mm,
+                            color = species)) + 
+  geom_point() +
+  labs(x = "flipper length in mm", 
+       y = "mass in g", 
+       title = "palmer penguins body dimensions") +
+theme_minimal()
+```
+
+```{r}
+# aes is reserved for mapping variables, not constants. in this example, color is determined by species. could also do color = "purple" outside of aes() and all points would be 
+ggplot(data = penguins, aes(x = body_mass_g, 
+                            y = flipper_length_mm)) + 
+  geom_point(color = "green") +
+  labs(x = "flipper length in mm", 
+       y = "mass in g", 
+       title = "palmer penguins body dimensions") +
+theme_minimal()
+```
